@@ -13,13 +13,9 @@ COPY sudoers.d/99_jenkins /etc/sudoers.d/99_jenkins
 ## Install AWS CLI
 RUN cd /tmp && wget -q https://s3.amazonaws.com/aws-cli/awscli-bundle.zip && unzip awscli-bundle.zip && awscli-bundle/install -i /opt/aws
 
-## Deploy SSH keys and config
-COPY .ssh/* /var/lib/jenkins/.ssh/
-RUN chmod 700 /var/lib/jenkins/.ssh
-
-## Deploy the run script
-COPY run /var/lib/jenkins/run
-RUN chmod +x /var/lib/jenkins/run
+## Deploy the run script, can't put it in /var/lib/jenkins because that volume will be mounted from Docker
+COPY run /jenkins
+RUN chmod +x /jenkins
 
 VOLUME /var/lib/jenkins
 VOLUME /var/log/jenkins
@@ -30,4 +26,4 @@ EXPOSE 50000
 
 USER jenkins
 
-ENTRYPOINT [ "/var/lib/jenkins/run" ]
+ENTRYPOINT [ "/jenkins" ]
