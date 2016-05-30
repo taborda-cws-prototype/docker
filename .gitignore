@@ -1,2 +1,2 @@
-jenkins/.ssh/id_api_rsa
-jenkins/.ssh/id_ui_rsa
+jenkins/ssh/id_api_rsa*
+jenkins/ssh/id_ui_rsa*
