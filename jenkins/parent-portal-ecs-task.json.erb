@@ -1,12 +1,7 @@
 {
   "containerDefinitions": [
     {
-      "volumesFrom": [],
       "memory": 500,
-      "extraHosts": null,
-      "dnsServers": null,
-      "disableNetworking": null,
-      "dnsSearchDomains": null,
       "portMappings": [
         {
           "hostPort": 8080,
@@ -14,38 +9,19 @@
           "protocol": "tcp"
         }
       ],
-      "hostname": null,
       "essential": true,
-      "entryPoint": null,
       "mountPoints": [
         {
           "containerPath": "/var/log/cws-parent-portal-api",
-          "sourceVolume": "parent-portal-api-log",
-          "readOnly": null
+          "sourceVolume": "parent-portal-api-log"
         }
       ],
       "name": "parent-portal-api",
-      "ulimits": null,
-      "dockerSecurityOptions": null,
-      "environment": [],
-      "links": null,
-      "workingDirectory": null,
-      "readonlyRootFilesystem": null,
       "image": "297353277856.dkr.ecr.us-west-2.amazonaws.com/parent-portal-api:<%= @api_tag %>",
-      "command": null,
-      "user": null,
-      "dockerLabels": null,
-      "logConfiguration": null,
-      "cpu": 512,
-      "privileged": null
+      "cpu": 512
     },
     {
-      "volumesFrom": [],
       "memory": 500,
-      "extraHosts": null,
-      "dnsServers": null,
-      "disableNetworking": null,
-      "dnsSearchDomains": null,
       "portMappings": [
         {
           "hostPort": 80,
@@ -53,9 +29,7 @@
           "protocol": "tcp"
         }
       ],
-      "hostname": null,
       "essential": true,
-      "entryPoint": null,
       "mountPoints": [
         {
           "containerPath": "/var/log/cws-parent-portal-ui",
@@ -64,19 +38,8 @@
         }
       ],
       "name": "parent-portal-ui",
-      "ulimits": null,
-      "dockerSecurityOptions": null,
-      "environment": [],
-      "links": null,
-      "workingDirectory": null,
-      "readonlyRootFilesystem": null,
       "image": "297353277856.dkr.ecr.us-west-2.amazonaws.com/parent-portal-ui:<%= @ui_tag %>",
-      "command": null,
-      "user": null,
-      "dockerLabels": null,
-      "logConfiguration": null,
-      "cpu": 512,
-      "privileged": null
+      "cpu": 512
     }
   ],
   "volumes": [
