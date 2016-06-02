@@ -4,10 +4,10 @@ MAINTAINER Chris O'Meara
 ADD http://pkg.jenkins-ci.org/redhat/jenkins.repo /etc/yum.repos.d/jenkins.repo
 RUN rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
 COPY docker.repo /etc/yum.repos.d/docker.repo
+RUN yum install -y epel-release
 RUN yum update -y && \
   yum install -y \
     docker-engine-1.9.1-1.el7.centos \
-    epel-release \
     git \
     initscripts \
     java-1.8.0-openjdk-devel \
