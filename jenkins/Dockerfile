@@ -28,6 +28,9 @@ RUN cd /tmp && wget -q https://s3.amazonaws.com/aws-cli/awscli-bundle.zip && unz
 COPY sudoers /etc/sudoers
 COPY sudoers.d/99_jenkins /etc/sudoers.d/99_jenkins
 
+## Set the timezone
+RUN ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
+
 ## Deploy the run script, can't put it in /var/lib/jenkins because that volume will be mounted from Docker
 COPY run /jenkins
 RUN chmod +x /jenkins
