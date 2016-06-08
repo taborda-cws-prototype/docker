@@ -48,6 +48,10 @@
         {
           "containerPath": "/var/log/cws-parent-portal-ui",
           "sourceVolume": "parent-portal-ui-log"
+        },
+        {
+          "containerPath": "/usr/local/share/cws-parent-portal-ui/env.js",
+          "sourceVolume": "parent-portal-ui-config-env"
         }
       ],
       "name": "parent-portal-ui",
@@ -67,6 +71,12 @@
         "sourcePath": "/var/lib/docker/volumes/cws-parent-portal-ui/log"
       },
       "name": "parent-portal-ui-log"
+    },
+    {
+      "host": {
+        "sourcePath": "/var/lib/docker/volumes/cws-parent-portal-ui/config/env.js"
+      },
+      "name": "parent-portal-ui-config-env"
     }
   ],
   "family": "parent-portal"
