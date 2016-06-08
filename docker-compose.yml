@@ -30,4 +30,5 @@ services:
     volumes:
       - ../cws-parent-portal-ui/log:/var/log/cws-parent-portal-ui
       - ../cws-parent-portal-ui/src:/usr/local/share/cws-parent-portal-ui
+      - ./ui/env.js:/usr/local/share/cws-parent-portal-ui/env.js
       - ../cws-parent-portal-ui/nginx.conf:/usr/local/etc/cws-parent-portal-ui/nginx.conf
