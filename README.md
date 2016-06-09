@@ -12,9 +12,7 @@ used to implement the continuous delivery pipeline for the CWS Parent Portal. Th
 
 ## Configuration
 
-The CWS Parent Portal application requires configuration of the env.js file prior to deployment. Edit the ui/env.js
-file and replace the baseurl variable with the location where the UI code, running in a browser, can contact the CWS
-Parent Portal API.
+The CWS Parent Portal application requires configuration of the env.js file prior to deployment. Edit the [ui/env.js](https://github.com/taborda-cws-prototype/docker/tree/master/ui) file and replace the `window.__env.baseurl` variable with [cws-parent-portal-api](https://github.com/taborda-cws-prototype/cws-parent-portal-api) url.
 
 Additionally, the UI, API and Postgres containers take standard Docker configuration options for volumes, ports and
 environment variables. Each container describes specific configuration options and the default configuration provides
@@ -41,8 +39,7 @@ be checked out:
 There are two Docker Compose files. Choose the profile suitable for your deployment.
 
 The docker-compose-release.yml file runs the system from Docker images published to Amazon's EC2 Container Registry
-(ECR). To run from release images, update the docker-compose-release.yml file with appropriate tags for the UI and API
-containers and use the docker-compose up command to run the system.
+(ECR). To run from release images, update the [docker-compose-release.yml](https://github.com/taborda-cws-prototype/docker) file with appropriate tags (i.e., local path where the repositories are cloned) for the UI and API containers and use the docker-compose up command to run the system. 
 
     % docker-compose -f docker-compose-release.yml up
 
