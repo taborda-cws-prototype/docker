@@ -8,7 +8,7 @@ services:
       - POSTGRES_USER=cpp
       - POSTGRES_PASSWORD=password1
   api:
-    image: "297353277856.dkr.ecr.us-west-2.amazonaws.com/parent-portal-api:31a4247"
+    image: "297353277856.dkr.ecr.us-west-2.amazonaws.com/parent-portal-api:latest"
     ports:
       - "8081:8080"
     volumes:
@@ -22,7 +22,7 @@ services:
     links:
       - db
   ui:
-    image: "297353277856.dkr.ecr.us-west-2.amazonaws.com/parent-portal-ui:e7ca5a0"
+    image: "297353277856.dkr.ecr.us-west-2.amazonaws.com/parent-portal-ui:latest"
     ports:
       - "8080:8080"
     volumes:
