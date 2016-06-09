@@ -13,8 +13,8 @@ used to implement the continuous delivery pipeline for the CWS Parent Portal. Th
 ## Configuration
 
 The CWS Parent Portal application requires configuration of the env.js file prior to deployment. Edit the ui/env.js
-file and replace the baseurl variable with the location where the UI code, running in a browser, can contact the CWS
-Parent Portal API.
+file in this repository and replace the ```baseurl``` variable with the location where the UI code, running in a
+browser, can contact the CWS Parent Portal API running instance.
 
 Additionally, the UI, API and Postgres containers take standard Docker configuration options for volumes, ports and
 environment variables. Each container describes specific configuration options and the default configuration provides
@@ -38,21 +38,11 @@ be checked out:
 
 ### Using Docker Compose
 
-There are two Docker Compose files. Choose the profile suitable for your deployment.
-
-The docker-compose-release.yml file runs the system from Docker images published to Amazon's EC2 Container Registry
-(ECR). To run from release images, update the docker-compose-release.yml file with appropriate tags for the UI and API
-containers and use the docker-compose up command to run the system.
-
-    % docker-compose -f docker-compose-release.yml up
-
-Upon completion, the application will be running on port 8080 of the Docker host. Proceed to the user interface to
-register a new user and begin using the application.
-
 The docker-compose.yml file is suitable for local development. The docker-compose file builds local images from
 source, reflecting the local system's current state. To run from the local images, execute the builds for the UI and
 API projects (reference project README files) and then run the system with Docker Compose.
 
     % docker-compose up
 
+[dockercompose]: https://docs.docker.com/compose/
 [jenkinsreadme]: jenkins/README.md
